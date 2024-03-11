@@ -42,19 +42,26 @@ export const PopExitTitle = styled.div`
   line-height: 30px;
   letter-spacing: -0.4px;
   margin-bottom: 20px;
+  color: #353743;
 `;
 
 export const PopExitButton = styled.button`
-  width: 153px;
+  width: 120px;
   height: 30px;
   border-radius: 4px;
   font-size: 14px;
-  line-height: 21px;
-  font-weight: 500;
-  letter-spacing: -0.14px;
+  background: transparent;
+  color: #942f3f;
+  font-weight: 600;
+  border-radius: 2px;
+  border: 1px solid #942f3f;
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+export const PopNoExitButton = styled(PopExitButton)`
+  color: #398897;
+  border: 1px solid #398897;
 `;
 
 export const PopExitFormGroup = styled.div`

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import CalendarComponent from '../components/Calendar/Calendar';
+import CalendarComponent from '../../components/Calendar/Calendar';
 import { Link } from 'react-router-dom';
 
 const PopBrowseContainer = styled.div`

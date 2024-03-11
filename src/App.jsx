@@ -1,7 +1,9 @@
 
 import { BrowserRouter as Router } from 'react-router-dom'; 
-import { AppRoutes } from '../routes';
+
 import { GlobalStyle } from './AppStyles';
+import { AppRoutes } from '../routes';
+
 
 const App = () => {
   return (

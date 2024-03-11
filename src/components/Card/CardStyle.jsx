@@ -15,8 +15,8 @@ export const CardsCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: stretch;
-  padding: 15px 13px 19px;
+  justify-content: space-between;
+  padding: 13px;
 `;
 
 export const CardGroup = styled.div`
@@ -61,7 +61,7 @@ export const CardBtn = styled.div`
 
 export const CardTitle = styled.h3`
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 18px;
   color: #353743;
   margin-bottom: 10px;

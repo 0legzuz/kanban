@@ -3,7 +3,6 @@ import * as S from './CardStyle';
 import { Link } from 'react-router-dom';
 
 const getThemeColors = (theme) => {
-
   const themeColors = {
     Работа: {
       backgroundColor: '#353743',
@@ -22,8 +21,15 @@ const getThemeColors = (theme) => {
   return themeColors[theme] || { backgroundColor: '', textColor: '' };
 };
 
+const formatDate = (inputDate) => {
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+  const date = new Date(inputDate);
+  return date.toLocaleDateString('ru-RU', options);
+};
+
 const CardComponent = ({ theme, title, date }) => {
   const { backgroundColor, textColor } = getThemeColors(theme);
+  const formattedDate = formatDate(date);
 
   return (
     <S.CardsItem>
@@ -49,12 +55,12 @@ const CardComponent = ({ theme, title, date }) => {
           <S.CardDate>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width={13}
-              height={13}
+              width="13"
+              height="13"
               viewBox="0 0 13 13"
               fill="none"
             >
-              <g clipPath="url(#clip0_1_415)">
+              <g clipPath="url(#clip0_1_189)">
                 <path
                   d="M10.5625 2.03125H2.4375C1.7644 2.03125 1.21875 2.5769 1.21875 3.25V10.5625C1.21875 11.2356 1.7644 11.7812 2.4375 11.7812H10.5625C11.2356 11.7812 11.7812 11.2356 11.7812 10.5625V3.25C11.7812 2.5769 11.2356 2.03125 10.5625 2.03125Z"
                   stroke="#979d9d"
@@ -70,12 +76,12 @@ const CardComponent = ({ theme, title, date }) => {
                 />
               </g>
               <defs>
-                <clipPath id="clip0_1_415">
-                  <rect width={13} height={13} fill="white" />
+                <clipPath id="clip0_1_189">
+                  <rect width="13" height="13" fill="white" />
                 </clipPath>
               </defs>
             </svg>
-            <p>{date}</p>
+            <p>Сделать до {formattedDate}</p>
           </S.CardDate>
         </S.CardContent>
       </S.CardsCard>
@@ -86,8 +92,7 @@ const CardComponent = ({ theme, title, date }) => {
 CardComponent.propTypes = {
   theme: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  status: PropTypes.string.isRequired
+  date: PropTypes.string.isRequired
 };
 
 export default CardComponent;

@@ -1,7 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as S from './ExitPageStyles';
 
 const ExitPage = () => {
+  const navigate = useNavigate();
+
+  const handleExit = () => {
+    localStorage.setItem('token', '');
+    localStorage.setItem('name', '');
+    localStorage.setItem('login', '');
+    navigate('/login');
+  };
+
   return (
     <S.PopExit>
       <S.PopExitContainer>
@@ -11,11 +20,13 @@ const ExitPage = () => {
           </S.PopExitTitle>
           <form>
             <S.PopExitFormGroup>
+              
+              <S.PopExitButton type="button" onClick={handleExit}>
+                
+                Да, выйти
+              </S.PopExitButton>
               <Link to="/">
-                <S.PopExitButton>Да, выйти</S.PopExitButton>
-              </Link>
-              <Link to="/">
-                <S.PopExitButton>Нет, остаться</S.PopExitButton>
+                <S.PopNoExitButton>Нет, остаться</S.PopNoExitButton>
               </Link>
             </S.PopExitFormGroup>
           </form>

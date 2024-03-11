@@ -124,13 +124,15 @@ export const FormTextArea = styled.textarea`
   font-size: 14px;
   line-height: 1;
   letter-spacing: -0.14px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  resize: none;
 
   &::placeholder {
+    padding-top: 7px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1px;
     color: #979d9d;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     letter-spacing: -0.14px;
   }
 `;
@@ -176,15 +178,32 @@ export const CategoriesTheme = styled.div`
   display: inline-block;
   width: auto;
   height: 30px;
-  padding: 8px 20px;
-  border-radius: 2px;
   margin-right: 7px;
-  opacity: 0.4;
 `;
 
-export const CategoriesThemeText = styled.p`
+
+export const CategoriesThemeRadio = styled.input.attrs({ type: 'radio' })`
+  display: none; 
+`;
+
+export const CategoriesThemeText = styled.label`
   font-size: 14px;
   font-weight: 600;
   line-height: 14px;
   white-space: nowrap;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 2px;
+  margin-right: 7px;
+  opacity: 0.4;
+
+  /* Add styles for the selected state */
+  ${CategoriesThemeRadio}:checked + & {
+    opacity: 1;
+    border-radius: 2px;
+    border: 1px solid;
+    color: #f7f6ef; 
+   background-color: #353743;
+
+  }
 `;

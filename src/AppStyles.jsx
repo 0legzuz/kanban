@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
+
 export const GlobalStyle = createGlobalStyle`
  * {
   margin: 0;
@@ -42,4 +43,12 @@ body {
 }
 
 `;
+
+export const Colors = {
+  light: '#f7f6ef',
+  green: '#398897',
+  dark: '#353743',
+  red: '#942F3F',
+  gray: '#979D9D'
+};
 

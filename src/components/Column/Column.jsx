@@ -1,10 +1,10 @@
-
+// ColumnComponent.jsx
 import CardComponent from '../Card/Card';
 import * as S from './ColumnStyles';
 import PropTypes from 'prop-types';
 
 const ColumnComponent = ({ columnTitle, cards }) => {
-  // Фильтрация карточек на основе columnTitle
+
   const filteredCards = cards.filter((card) => card.status === columnTitle);
 
   return (
@@ -14,7 +14,7 @@ const ColumnComponent = ({ columnTitle, cards }) => {
         {filteredCards.map((card) => (
           <CardComponent
             key={card.id}
-            theme={card.theme}
+            theme={card.topic}
             title={card.title}
             date={card.date}
             status={card.status}
